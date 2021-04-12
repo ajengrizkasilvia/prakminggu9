@@ -1,6 +1,11 @@
 # flutter_http
+HASIL SCREENSHOT 
+TAMPILAN AWAL
+![plot](./image/tg1.jpeg)
 
-A new Flutter project.
+CHALLENGE
+![plot](./image/tg2.jpeg)
+
 
 ## Getting Started
 
