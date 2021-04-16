@@ -10,7 +10,8 @@ CHALLENGE
 
 
 TUGAS
-
+![plot](./image/gb1.jpeg)
+![plot](./image/gb2.jpeg)
 
 
 ## Getting Started
