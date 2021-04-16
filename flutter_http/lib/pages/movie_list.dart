@@ -36,27 +36,31 @@ class _MovieListState extends State<MovieList> {
       appBar: AppBar(
         title: Text("Popular Movies"),
       ),
-      body: ListView.builder(
+      body: GridView.builder(
         itemCount: (this.moviesCount == null) ? 0 : this.moviesCount,
+
+        gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3, //jumlah grid
+            childAspectRatio: 2 / 3, //jarak bawah
+            mainAxisSpacing: 20.0,
+            crossAxisSpacing: 20.0,
+            
+          ),
         itemBuilder: (context, int position) {
-          return Card(
-            color: Colors.white,
-            elevation: 2.0,
-            child: ListTile(
-              leading: Image.network(
-                  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/' +
-                      movies[position].posterPath),
-              title: Text(movies[position].title),
-              subtitle: Text(
-                'Rating = ' + movies[position].voteAverage.toString(),
+          return GridTile(
+              child: InkResponse(
+                enableFeedback: true,
+                child: Image.network(
+                  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/' + movies[position].posterPath,
+                  fit: BoxFit.cover,
+                ),
+                onTap: () {
+                  MaterialPageRoute route = MaterialPageRoute(
+                      builder: (_) => MovieDetail(movies[position]));
+                  Navigator.push(context, route);
+                },
               ),
-              onTap: () {
-                MaterialPageRoute route = MaterialPageRoute(
-                    builder: (_) => MovieDetail(movies[position]));
-                Navigator.push(context, route);
-              },
-            ),
-          );
+            );
         },
       ),
     );
