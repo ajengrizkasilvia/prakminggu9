@@ -9,6 +9,11 @@ CHALLENGE
 ![plot](./image/tg2.jpeg)
 
 
+TUGAS
+![plot](./image/gb1.jpeg)
+![plot](./image/gb2.jpeg)
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
